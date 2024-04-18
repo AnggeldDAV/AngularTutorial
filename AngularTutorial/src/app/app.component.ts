@@ -36,10 +36,10 @@ export class AppComponent {
   }
   calculoImc() {
     if (this.sistema == "Metrico") {
-      this.imc = Number(this.peso) / (Number(this.altura) ^ 2);
-      return this.imc;
-    } else if (this.sistema == "ingles") {
-      this.imc = (Number(this.peso) / (Number(this.altura)^2)) * 703;
+      this.imc = Number(this.peso) / (Number(this.altura **2));
+      return this.imc ;
+    } else if (this.sistema == "Ingles") {
+      this.imc = (Number(this.peso) / Number(this.altura **2)) * 703;
       return this.imc;
     } else {
       return "Seleccione un sistema";
@@ -52,18 +52,17 @@ export class AppComponent {
       return this.composicion = "Normal";
     } else if (this.imc >= 25.0 && this.imc <= 29.9) {
       return this.composicion = "Peso superior al normal";
-    } else if (this.imc > 30) {
+    } else if (this.imc >= 30) {
       return this.composicion = "Obesidad";
     } else {
-      return "error"
+      return "error";
     }
   }
   muestra() {
     if (this.eligeSistema()) {
-      return this.mensaje = `Hola ${this.nombre}, su sistema de medida es ${this.sistema}, tiene de peso:${this.peso} y de altura ${this.altura}, un IMC de ${this.calculoImc()} y por tanto usted tiene un IMC ${this.devuelveComposicion()}`
+      return this.mensaje = `Hola ${this.nombre}, su sistema de medida es ${this.sistema}, tiene de peso:${this.peso} y de altura ${this.altura}, un IMC de ${this.calculoImc()} y por tanto usted tiene un IMC ${this.devuelveComposicion()}.`
     } else {
-      return this.mensaje ="Seleccione Sistema de medida por favor"
+      return this.mensaje ="Seleccione Sistema de medida por favor."
     }
-    
   }
 }
