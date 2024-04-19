@@ -1,0 +1,8 @@
+input[type="button"] {
+    border-radius:10px;
+    background-color:dodgerblue;
+}
+textarea {
+  height: 40px;
+  width: 728px;
+}
