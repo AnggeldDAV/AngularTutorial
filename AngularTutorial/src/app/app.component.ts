@@ -24,7 +24,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 
 export class AppComponent {
   nombre: string = "";
+  etiquetaPeso: string = "Peso";
   peso: number = 0;
+  etiquetaAltura: string = "Altura";
   altura: number = 0;
   sistema: string = "";
   mensaje = "";

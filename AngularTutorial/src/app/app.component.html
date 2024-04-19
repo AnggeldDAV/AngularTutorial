@@ -45,16 +45,16 @@
 
 <label>Nombre: </label>
 <input type="text" [(ngModel)]="nombre"/>
-<label>Peso: </label>
+<label>{{etiquetaPeso}}: </label>
 <input type="number" [(ngModel)]="peso"/>
-<label>Altura: </label>
+<label>{{etiquetaAltura}}: </label>
 <input type="number" [(ngModel)]="altura"/>
 <input type="button" value="Calcula" (click)="muestra()"/>
 <div>
   <label>Sistema: </label>
-  <input type="radio" [(ngModel)]="sistema" value="Metrico" />
+  <input type="radio" (click)="etiquetaPeso= 'Kg'; etiquetaAltura= 'Metros';"[(ngModel)]="sistema" value="Metrico" />
   <label>Metrico</label>
-  <input type="radio" [(ngModel)]="sistema" value="Ingles" />
+  <input type="radio" (click)="etiquetaPeso= 'lb'; etiquetaAltura= 'inches';"[(ngModel)]="sistema" value="Ingles" />
   <label>Ingles</label>
 </div>
 <textarea style="height:40px;width:728px">{{mensaje}}</textarea>
